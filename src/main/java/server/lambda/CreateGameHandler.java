@@ -7,9 +7,7 @@ import com.amazonaws.services.dynamodbv2.document.PutItemOutcome;
 import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
-import model.request.CreateGameRequest;
 import model.response.CreateGameResponse;
-import server.service.GameService;
 
 import java.util.*;
 
