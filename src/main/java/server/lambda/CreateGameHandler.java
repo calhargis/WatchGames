@@ -8,6 +8,7 @@ import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import model.response.CreateGameResponse;
+import server.util.GameUtil;
 
 import java.util.*;
 
@@ -29,37 +30,21 @@ public class CreateGameHandler implements RequestHandler<Map<String, Object>, Cr
     @Override
     public CreateGameResponse handleRequest(Map<String, Object> input, Context context) {
         context.getLogger().log("Input: " + input);
+        GameUtil gameUtil = new GameUtil(table);
 
         // Extract data from input
         String gameId = (String) input.get("gameId");
         String playerXId = (String) input.get("playerXId");
         String playerOId = (String) input.get("playerOId");
-        String[][] board = new String[3][3];
         String currentTurn = (String) input.get("currentTurn");
         String creationTimestamp = (String) input.get("creationTimestamp");
 
-        if (gameId == null || gameId.isEmpty()) {
-            gameId = "no gameId found in input. (CreateGameHandler)";
-        }
-        if (playerXId == null || playerXId.isEmpty()) {
-            playerXId = "no playerXId found in input. (CreateGameHandler)";
-        }
-        if (playerOId == null || playerOId.isEmpty()) {
-            playerOId = "no playerOid found in input. (CreateGameHandler)";
-        }
-        if (currentTurn == null || currentTurn.isEmpty()) {
-            currentTurn = "no currentTurn found in input. (CreateGameHandler)";
-        }
-        if (creationTimestamp == null || creationTimestamp.isEmpty()) {
-            creationTimestamp = "no creationTimestamp found in input. (CreateGameHandler)";
+        if (!gameUtil.checkValidRequest(gameId, playerXId, playerOId, currentTurn, creationTimestamp)) {
+            throw new RuntimeException("input has empty variables (CreateGameHandler)");
         }
 
         // Initialize the board
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                board[i][j] = "";
-            }
-        }
+        String [][] board = gameUtil.boardInit();
 
         // Create game state
         Map<String, Object> gameState = new HashMap<>();
@@ -71,7 +56,7 @@ public class CreateGameHandler implements RequestHandler<Map<String, Object>, Cr
         gameState.put("creationTimestamp", creationTimestamp);
 
         // Save the game state to DynamoDB (pseudo code, implement DynamoDB logic here)
-        saveGameStateToDynamoDB(gameState);
+        gameUtil.saveGameStateToDynamoDB(gameState);
 
         // Create response
         CreateGameResponse response = new CreateGameResponse();
@@ -87,28 +72,7 @@ public class CreateGameHandler implements RequestHandler<Map<String, Object>, Cr
         return response;
     }
 
-    private void saveGameStateToDynamoDB(Map<String, Object> gameState) {
-        // Convert the board from 2D array to List of Lists
-        List<List<String>> boardList = convertBoardToList((String[][]) gameState.get("board"));
 
-        Item item = new Item()
-                .withPrimaryKey("gameId", gameState.get("gameId"))
-                .withString("playerXId", (String) gameState.get("playerXId"))
-                .withString("playerOId", (String) gameState.get("playerOId"))
-                .withString("currentTurn", (String) gameState.get("currentTurn"))
-                .withString("creationTimestamp", (String) gameState.get("creationTimestamp"))
-                .withList("board", boardList); // Use withList for List of Lists
-
-        PutItemOutcome outcome = table.putItem(item);
-    }
-
-    private List<List<String>> convertBoardToList(String[][] board) {
-        List<List<String>> boardList = new ArrayList<>();
-        for (String[] row : board) {
-            boardList.add(Arrays.asList(row));
-        }
-        return boardList;
-    }
 
 
 }
