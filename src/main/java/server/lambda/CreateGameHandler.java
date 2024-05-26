@@ -2,8 +2,6 @@ package server.lambda;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
-import com.amazonaws.services.dynamodbv2.document.Item;
-import com.amazonaws.services.dynamodbv2.document.PutItemOutcome;
 import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
@@ -39,7 +37,7 @@ public class CreateGameHandler implements RequestHandler<Map<String, Object>, Cr
         String currentTurn = (String) input.get("currentTurn");
         String creationTimestamp = (String) input.get("creationTimestamp");
 
-        if (!gameUtil.checkValidRequest(gameId, playerXId, playerOId, currentTurn, creationTimestamp)) {
+        if (!gameUtil.isValidRequest(gameId, playerXId, playerOId, currentTurn, creationTimestamp)) {
             throw new RuntimeException("input has empty variables (CreateGameHandler)");
         }
 

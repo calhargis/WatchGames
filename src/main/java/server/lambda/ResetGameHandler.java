@@ -3,12 +3,9 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 import com.amazonaws.services.dynamodbv2.document.Table;
-import com.amazonaws.services.dynamodbv2.document.spec.UpdateItemSpec;
-import com.amazonaws.services.dynamodbv2.document.utils.ValueMap;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import model.response.CreateGameResponse;
-import model.response.ResetGameResponse;
 import server.util.GameUtil;
 
 import java.util.HashMap;
@@ -40,7 +37,7 @@ public class ResetGameHandler implements RequestHandler<Map<String, Object>, Cre
         String currentTurn = (String) input.get("currentTurn");
         String creationTimestamp = (String) input.get("creationTimestamp");
 
-        if (!gameUtil.checkValidRequest(gameId, playerXId, playerOId, currentTurn, creationTimestamp)) {
+        if (!gameUtil.isValidRequest(gameId, playerXId, playerOId, currentTurn, creationTimestamp)) {
             throw new RuntimeException("input has empty variables (CreateGameHandler)");
         }
 

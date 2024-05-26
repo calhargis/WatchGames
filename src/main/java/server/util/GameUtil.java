@@ -3,6 +3,7 @@ package server.util;
 import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.document.PutItemOutcome;
 import com.amazonaws.services.dynamodbv2.document.Table;
+import com.amazonaws.services.dynamodbv2.document.spec.GetItemSpec;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -49,7 +50,7 @@ public class GameUtil {
         return board;
     }
 
-    public boolean checkValidRequest(String gameId, String playerXId, String playerOId, String currentTurn, String creationTimestamp) {
+    public boolean isValidRequest(String gameId, String playerXId, String playerOId, String currentTurn, String creationTimestamp) {
         if (gameId == null || gameId.isEmpty()) {
             return false;
         }
@@ -66,5 +67,10 @@ public class GameUtil {
             return false;
         }
         return true;
+    }
+
+    public Map<String, Object> getGameState(String gameId) {
+        GetItemSpec spec = new GetItemSpec().withPrimaryKey("gameId", gameId);
+        return table.getItem(spec).asMap();
     }
 }
