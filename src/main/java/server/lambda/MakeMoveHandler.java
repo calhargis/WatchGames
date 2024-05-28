@@ -33,6 +33,7 @@ public class MakeMoveHandler implements RequestHandler<MakeMoveRequest, MakeMove
         String playerId = request.getPlayerId();
         int row = request.getRow();
         int col = request.getCol();
+        // welcome shade
 
 
         // Fetch the current game state from DynamoDB
