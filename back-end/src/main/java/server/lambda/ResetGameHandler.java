@@ -9,6 +9,7 @@ import model.response.CreateGameResponse;
 import server.util.GameUtil;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ResetGameHandler implements RequestHandler<Map<String, Object>, CreateGameResponse>  {
@@ -42,7 +43,7 @@ public class ResetGameHandler implements RequestHandler<Map<String, Object>, Cre
         }
 
         // Initialize the board
-        String [][] board = gameUtil.boardInit();
+        List<List<String>> board = gameUtil.boardInit();
 
         // Create game state
         Map<String, Object> gameState = new HashMap<>();

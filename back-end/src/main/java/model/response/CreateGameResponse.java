@@ -1,11 +1,13 @@
 package model.response;
 
+import java.util.List;
+
 public class CreateGameResponse {
     private String status;
     private String gameId;
     private String playerXId;
     private String playerOId;
-    private String[][] board;
+    private List<List<String>> board;
     private String currentTurn;
     private String creationTimestamp;
     private String message;
@@ -16,7 +18,7 @@ public class CreateGameResponse {
     public CreateGameResponse() {
     }
 
-    public CreateGameResponse(String status, String gameId, String playerXId, String playerOId, String[][] board, String currentTurn, String creationTimestamp, String message) {
+    public CreateGameResponse(String status, String gameId, String playerXId, String playerOId, List<List<String>> board, String currentTurn, String creationTimestamp, String message) {
         this.status = status;
         this.gameId = gameId;
         this.playerXId = playerXId;
@@ -59,11 +61,11 @@ public class CreateGameResponse {
         this.playerOId = playerOId;
     }
 
-    public String[][] getBoard() {
+    public List<List<String>> getBoard() {
         return board;
     }
 
-    public void setBoard(String[][] board) {
+    public void setBoard(List<List<String>> board) {
         this.board = board;
     }
 

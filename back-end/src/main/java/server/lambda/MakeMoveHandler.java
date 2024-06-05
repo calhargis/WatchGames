@@ -33,14 +33,12 @@ public class MakeMoveHandler implements RequestHandler<MakeMoveRequest, MakeMove
         String playerId = request.getPlayerId();
         int row = request.getRow();
         int col = request.getCol();
-        // welcome shade
-
 
         // Fetch the current game state from DynamoDB
         Map<String, Object> gameState = gameUtil.getGameState(gameId);
 
         if (gameState == null) {
-            return createErrorResponse("Game not found");
+            return gameUtil.createErrorResponse("Game not found");
         }
 
         String[][] board = (String[][]) gameState.get("board");
@@ -48,7 +46,7 @@ public class MakeMoveHandler implements RequestHandler<MakeMoveRequest, MakeMove
 
         // Validate the move
         if (!isValidMove(board, row, col, currentTurn, playerId)) {
-            return createErrorResponse("Invalid move");
+            return gameUtil.createErrorResponse("Invalid move");
         }
 
         // Update the board with the player's move
@@ -119,12 +117,7 @@ public class MakeMoveHandler implements RequestHandler<MakeMoveRequest, MakeMove
         return true;
     }
 
-    private MakeMoveResponse createErrorResponse(String message) {
-        MakeMoveResponse response = new MakeMoveResponse();
-        response.setStatus("Error");
-        response.setMessage(message);
-        return response;
-    }
+
 
     private void saveGameStateToDynamoDB(String gameId, String[][] board, String currentTurn) {
         List<List<String>> boardList = gameUtil.convertBoardToList(board);

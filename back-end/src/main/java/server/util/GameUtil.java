@@ -4,6 +4,7 @@ import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.document.PutItemOutcome;
 import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.dynamodbv2.document.spec.GetItemSpec;
+import model.response.MakeMoveResponse;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,12 +41,14 @@ public class GameUtil {
         return boardList;
     }
 
-    public String[][] boardInit() {
-        String[][] board = new String[3][3];
+    public List<List<String>> boardInit() {
+        List<List<String>> board = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
+            List<String> row = new ArrayList<>();
             for (int j = 0; j < 3; j++) {
-                board[i][j] = "";
+                row.add("");  // Add empty string to represent an empty cell
             }
+            board.add(row);
         }
         return board;
     }
@@ -72,5 +75,12 @@ public class GameUtil {
     public Map<String, Object> getGameState(String gameId) {
         GetItemSpec spec = new GetItemSpec().withPrimaryKey("gameId", gameId);
         return table.getItem(spec).asMap();
+    }
+
+    public MakeMoveResponse createErrorResponse(String message) {
+        MakeMoveResponse response = new MakeMoveResponse();
+        response.setStatus("Error");
+        response.setMessage(message);
+        return response;
     }
 }

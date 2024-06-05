@@ -1,10 +1,12 @@
 package model.request;
 
+import java.util.List;
+
 public class CreateGameRequest {
     private String gameId;
     private String playerXId;
     private String playerOId;
-    private String[][] board;
+    private List<List<String>> board;
     private String currentTurn;
     private String creationTimestamp;
 
@@ -34,11 +36,11 @@ public class CreateGameRequest {
         this.playerOId = playerOId;
     }
 
-    public String[][] getBoard() {
+    public List<List<String>> getBoard() {
         return board;
     }
 
-    public void setBoard(String[][] board) {
+    public void setBoard(List<List<String>> board) {
         this.board = board;
     }
 

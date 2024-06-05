@@ -12,8 +12,6 @@ import java.util.*;
 
 public class CreateGameHandler implements RequestHandler<Map<String, Object>, CreateGameResponse> {
 
-    //TODO Make sure DynamoDB table is correctly connected
-
     private final AmazonDynamoDB client;
     private final DynamoDB dynamoDB;
     private final Table table;
@@ -42,7 +40,7 @@ public class CreateGameHandler implements RequestHandler<Map<String, Object>, Cr
         }
 
         // Initialize the board
-        String [][] board = gameUtil.boardInit();
+        List<List<String>> board = gameUtil.boardInit();
 
         // Create game state
         Map<String, Object> gameState = new HashMap<>();
@@ -69,8 +67,5 @@ public class CreateGameHandler implements RequestHandler<Map<String, Object>, Cr
 
         return response;
     }
-
-
-
 
 }
