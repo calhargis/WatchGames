@@ -1,9 +1,11 @@
 package model.response;
 
+import java.util.List;
+
 public class MakeMoveResponse {
     private String status;
     private String message;
-    private String[][] board;
+    private List<List<String>> board;
     private String winner;
     private boolean draw;
 
@@ -23,11 +25,11 @@ public class MakeMoveResponse {
         this.message = message;
     }
 
-    public String[][] getBoard() {
+    public List<List<String>> getBoard() {
         return board;
     }
 
-    public void setBoard(String[][] board) {
+    public void setBoard(List<List<String>> board) {
         this.board = board;
     }
 

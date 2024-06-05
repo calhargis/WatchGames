@@ -5,6 +5,7 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import model.game.GameState;
 import model.response.CreateGameResponse;
 import server.util.GameUtil;
 
@@ -43,13 +44,7 @@ public class CreateGameHandler implements RequestHandler<Map<String, Object>, Cr
         List<List<String>> board = gameUtil.boardInit();
 
         // Create game state
-        Map<String, Object> gameState = new HashMap<>();
-        gameState.put("gameId", gameId);
-        gameState.put("playerXId", playerXId);
-        gameState.put("playerOId", playerOId);
-        gameState.put("board", board);
-        gameState.put("currentTurn", currentTurn);
-        gameState.put("creationTimestamp", creationTimestamp);
+        GameState gameState = new GameState(gameId, playerXId, playerOId, currentTurn, creationTimestamp, board);
 
         // Save the game state to DynamoDB (pseudo code, implement DynamoDB logic here)
         gameUtil.saveGameStateToDynamoDB(gameState);

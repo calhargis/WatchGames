@@ -4,6 +4,9 @@ import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.document.PutItemOutcome;
 import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.dynamodbv2.document.spec.GetItemSpec;
+import com.amazonaws.services.dynamodbv2.document.spec.PutItemSpec;
+import com.google.gson.Gson;
+import model.game.GameState;
 import model.response.MakeMoveResponse;
 
 import java.util.ArrayList;
@@ -13,24 +16,19 @@ import java.util.Map;
 
 public class GameUtil {
     private final Table table;
+    private final Gson gson;
 
     public GameUtil(Table table) {
         this.table = table;
+        gson = new Gson();
     }
 
-    public void saveGameStateToDynamoDB(Map<String, Object> gameState) {
-        // Convert the board from 2D array to List of Lists
-        List<List<String>> boardList = convertBoardToList((String[][]) gameState.get("board"));
-
-        Item item = new Item()
-                .withPrimaryKey("gameId", gameState.get("gameId"))
-                .withString("playerXId", (String) gameState.get("playerXId"))
-                .withString("playerOId", (String) gameState.get("playerOId"))
-                .withString("currentTurn", (String) gameState.get("currentTurn"))
-                .withString("creationTimestamp", (String) gameState.get("creationTimestamp"))
-                .withList("board", boardList); // Use withList for List of Lists
-
-        PutItemOutcome outcome = table.putItem(item);
+    public PutItemOutcome saveGameStateToDynamoDB(GameState gameState) {
+        String gameId = gameState.getGameId();
+        String gameStateJson = gson.toJson(gameState);
+        return table.putItem(new PutItemSpec().withItem(new Item()
+                .withPrimaryKey("gameId", gameId)
+                .withString("gameState", gameStateJson)));
     }
 
     public List<List<String>> convertBoardToList(String[][] board) {
@@ -72,9 +70,15 @@ public class GameUtil {
         return true;
     }
 
-    public Map<String, Object> getGameState(String gameId) {
+    public GameState getGameState(String gameId) {
         GetItemSpec spec = new GetItemSpec().withPrimaryKey("gameId", gameId);
-        return table.getItem(spec).asMap();
+        Item item = table.getItem(spec);
+
+        if (item != null) {
+            String gameStateJson = item.getString("gameState");
+            return gson.fromJson(gameStateJson, GameState.class);
+        }
+        return null;
     }
 
     public MakeMoveResponse createErrorResponse(String message) {
@@ -83,4 +87,6 @@ public class GameUtil {
         response.setMessage(message);
         return response;
     }
+
+
 }

@@ -7,10 +7,12 @@ import com.amazonaws.services.dynamodbv2.document.spec.UpdateItemSpec;
 import com.amazonaws.services.dynamodbv2.document.utils.ValueMap;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import model.game.GameState;
 import model.request.MakeMoveRequest;
 import model.response.MakeMoveResponse;
 import server.util.GameUtil;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,14 +37,14 @@ public class MakeMoveHandler implements RequestHandler<MakeMoveRequest, MakeMove
         int col = request.getCol();
 
         // Fetch the current game state from DynamoDB
-        Map<String, Object> gameState = gameUtil.getGameState(gameId);
+        GameState gameState = gameUtil.getGameState(gameId);
 
         if (gameState == null) {
             return gameUtil.createErrorResponse("Game not found");
         }
 
-        String[][] board = (String[][]) gameState.get("board");
-        String currentTurn = (String) gameState.get("currentTurn");
+        List<List<String>> board = gameState.getBoard();
+        String currentTurn = gameState.getCurrentTurn();
 
         // Validate the move
         if (!isValidMove(board, row, col, currentTurn, playerId)) {
@@ -50,18 +52,18 @@ public class MakeMoveHandler implements RequestHandler<MakeMoveRequest, MakeMove
         }
 
         // Update the board with the player's move
-        board[row][col] = currentTurn;
+        makeMove(board, row, col, currentTurn);
 
-        // Check for win or draw
+
+        // Check for win or draw (null)
         String winner = checkWinner(board);
-        boolean draw = isDraw(board);
 
         // Update the turn
-        if (winner == null && !draw) {
+        if (winner == null) {
             currentTurn = currentTurn.equals("X") ? "O" : "X";
         }
-        gameState.put("board", board);
-        gameState.put("currentTurn", currentTurn);
+        gameState.setBoard(board);
+        gameState.setCurrentTurn(currentTurn);
 
         // Save the updated game state to DynamoDB
         gameUtil.saveGameStateToDynamoDB(gameState);
@@ -71,53 +73,103 @@ public class MakeMoveHandler implements RequestHandler<MakeMoveRequest, MakeMove
         response.setStatus("Move made successfully");
         response.setBoard(board);
         response.setWinner(winner);
-        response.setDraw(draw);
-        response.setMessage(winner != null ? "Player " + winner + " wins!" : draw ? "The game is a draw." : "Next player's turn");
 
+        // Next turn
+        if (winner == null) {
+            response.setMessage("Next player's turn");
+            return response;
+        }
+        // Draw
+        else if (winner.equals("Draw")){
+            response.setDraw(true);
+            return response;
+        }
+
+        // Game won
+        response.setMessage("Player " + winner + " wins!");
         return response;
     }
 
-    private boolean isValidMove(String[][] board, int row, int col, String currentTurn, String playerId) {
+    private boolean isValidMove(List<List<String>> board, int row, int col, String currentTurn, String playerId) {
         if (row < 0 || row >= 3 || col < 0 || col >= 3) {
             return false;
         }
-        if (!board[row][col].isEmpty()) {
+        if (!board.get(row).get(col).isEmpty()) {
             return false;
         }
         return currentTurn.equals(playerId);
     }
 
-    private String checkWinner(String[][] board) {
-        // Check rows, columns, and diagonals for a winner
+    public static String checkWinner(List<List<String>> board) {
+        // Check rows
         for (int i = 0; i < 3; i++) {
-            if (!board[i][0].isEmpty() && board[i][0].equals(board[i][1]) && board[i][1].equals(board[i][2])) {
-                return board[i][0];
+            if (!board.get(i).get(0).isEmpty() &&
+                    board.get(i).get(0).equals(board.get(i).get(1)) &&
+                    board.get(i).get(1).equals(board.get(i).get(2))) {
+                return board.get(i).get(0);
             }
-            if (!board[0][i].isEmpty() && board[0][i].equals(board[1][i]) && board[1][i].equals(board[2][i])) {
-                return board[0][i];
-            }
         }
-        if (!board[0][0].isEmpty() && board[0][0].equals(board[1][1]) && board[1][1].equals(board[2][2])) {
-            return board[0][0];
-        }
-        if (!board[0][2].isEmpty() && board[0][2].equals(board[1][1]) && board[1][1].equals(board[2][0])) {
-            return board[0][2];
-        }
-        return null;
-    }
 
-    private boolean isDraw(String[][] board) {
+        // Check columns
         for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (board[i][j].isEmpty()) {
-                    return false;
+            if (!board.get(0).get(i).isEmpty() &&
+                    board.get(0).get(i).equals(board.get(1).get(i)) &&
+                    board.get(1).get(i).equals(board.get(2).get(i))) {
+                return board.get(0).get(i);
+            }
+        }
+
+        // Check diagonals
+        if (!board.get(0).get(0).isEmpty() &&
+                board.get(0).get(0).equals(board.get(1).get(1)) &&
+                board.get(1).get(1).equals(board.get(2).get(2))) {
+            return board.get(0).get(0);
+        }
+
+        if (!board.get(0).get(2).isEmpty() &&
+                board.get(0).get(2).equals(board.get(1).get(1)) &&
+                board.get(1).get(1).equals(board.get(2).get(0))) {
+            return board.get(0).get(2);
+        }
+
+        // Check if there are any empty cells
+        for (List<String> row : board) {
+            for (String cell : row) {
+                if (cell.isEmpty()) {
+                    return null; // Game is not finished
                 }
             }
         }
-        return true;
+
+        // If no winner and no empty cells, it's a draw
+        return "Draw";
     }
 
+    // Method to change the value at a specific row and column
+    public void makeMove(List<List<String>> board, int row, int col, String player) {
+        if (row < 0 || row >= board.size() || col < 0 || col >= board.get(row).size()) {
+            throw new IllegalArgumentException("Invalid move: out of board bounds.");
+        }
 
+        if (!board.get(row).get(col).isEmpty()) {
+            throw new IllegalArgumentException("Invalid move: cell already occupied.");
+        }
+
+        board.get(row).set(col, player);
+    }
+
+    // Method to initialize an empty Tic Tac Toe board
+    public List<List<String>> initializeEmptyBoard() {
+        List<List<String>> board = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            List<String> row = new ArrayList<>();
+            for (int j = 0; j < 3; j++) {
+                row.add("");  // Add empty string to represent an empty cell
+            }
+            board.add(row);
+        }
+        return board;
+    }
 
     private void saveGameStateToDynamoDB(String gameId, String[][] board, String currentTurn) {
         List<List<String>> boardList = gameUtil.convertBoardToList(board);
