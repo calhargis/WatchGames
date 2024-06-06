@@ -92,9 +92,11 @@ public class MakeMoveHandler implements RequestHandler<MakeMoveRequest, MakeMove
 
     private boolean isValidMove(List<List<String>> board, int row, int col, String currentTurn, String playerId) {
         if (row < 0 || row >= 3 || col < 0 || col >= 3) {
+//            System.out.println(row + " " + col);
             return false;
         }
         if (!board.get(row).get(col).isEmpty()) {
+//            System.out.println("not empty");
             return false;
         }
         return currentTurn.equals(playerId);
