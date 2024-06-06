@@ -1,0 +1,1014 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C44E04A2C123C6500034C10 /* WatchGamesFrontEndApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44E0492C123C6500034C10 /* WatchGamesFrontEndApp.swift */; };
+		5C44E04C2C123C6500034C10 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44E04B2C123C6500034C10 /* ContentView.swift */; };
+		5C44E04E2C123C6800034C10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C44E04D2C123C6800034C10 /* Assets.xcassets */; };
+		5C44E0512C123C6800034C10 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C44E0502C123C6800034C10 /* Preview Assets.xcassets */; };
+		5C44E05B2C123C6800034C10 /* WatchGamesFrontEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44E05A2C123C6800034C10 /* WatchGamesFrontEndTests.swift */; };
+		5C44E0652C123C6800034C10 /* WatchGamesFrontEndUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44E0642C123C6800034C10 /* WatchGamesFrontEndUITests.swift */; };
+		5C44E0672C123C6800034C10 /* WatchGamesFrontEndUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44E0662C123C6800034C10 /* WatchGamesFrontEndUITestsLaunchTests.swift */; };
+		5C44E06D2C123C6800034C10 /* WatchGamesFrontEnd Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5C44E06C2C123C6800034C10 /* WatchGamesFrontEnd Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5C44E0722C123C6800034C10 /* WatchGamesFrontEndApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44E0712C123C6800034C10 /* WatchGamesFrontEndApp.swift */; };
+		5C44E0742C123C6800034C10 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44E0732C123C6800034C10 /* ContentView.swift */; };
+		5C44E0762C123C6A00034C10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C44E0752C123C6A00034C10 /* Assets.xcassets */; };
+		5C44E0792C123C6A00034C10 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C44E0782C123C6A00034C10 /* Preview Assets.xcassets */; };
+		5C44E0832C123C6A00034C10 /* WatchGamesFrontEnd_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44E0822C123C6A00034C10 /* WatchGamesFrontEnd_Watch_AppTests.swift */; };
+		5C44E08D2C123C6A00034C10 /* WatchGamesFrontEnd_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44E08C2C123C6A00034C10 /* WatchGamesFrontEnd_Watch_AppUITests.swift */; };
+		5C44E08F2C123C6A00034C10 /* WatchGamesFrontEnd_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44E08E2C123C6A00034C10 /* WatchGamesFrontEnd_Watch_AppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5C44E0572C123C6800034C10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C44E03E2C123C6500034C10 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C44E0452C123C6500034C10;
+			remoteInfo = WatchGamesFrontEnd;
+		};
+		5C44E0612C123C6800034C10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C44E03E2C123C6500034C10 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C44E0452C123C6500034C10;
+			remoteInfo = WatchGamesFrontEnd;
+		};
+		5C44E06E2C123C6800034C10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C44E03E2C123C6500034C10 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C44E06B2C123C6800034C10;
+			remoteInfo = "WatchGamesFrontEnd Watch App";
+		};
+		5C44E07F2C123C6A00034C10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C44E03E2C123C6500034C10 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C44E06B2C123C6800034C10;
+			remoteInfo = "WatchGamesFrontEnd Watch App";
+		};
+		5C44E0892C123C6A00034C10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C44E03E2C123C6500034C10 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C44E06B2C123C6800034C10;
+			remoteInfo = "WatchGamesFrontEnd Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5C44E0952C123C6A00034C10 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				5C44E06D2C123C6800034C10 /* WatchGamesFrontEnd Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5C44E0462C123C6500034C10 /* WatchGamesFrontEnd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchGamesFrontEnd.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C44E0492C123C6500034C10 /* WatchGamesFrontEndApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchGamesFrontEndApp.swift; sourceTree = "<group>"; };
+		5C44E04B2C123C6500034C10 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5C44E04D2C123C6800034C10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C44E0502C123C6800034C10 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5C44E0562C123C6800034C10 /* WatchGamesFrontEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchGamesFrontEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C44E05A2C123C6800034C10 /* WatchGamesFrontEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchGamesFrontEndTests.swift; sourceTree = "<group>"; };
+		5C44E0602C123C6800034C10 /* WatchGamesFrontEndUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchGamesFrontEndUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C44E0642C123C6800034C10 /* WatchGamesFrontEndUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchGamesFrontEndUITests.swift; sourceTree = "<group>"; };
+		5C44E0662C123C6800034C10 /* WatchGamesFrontEndUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchGamesFrontEndUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5C44E06C2C123C6800034C10 /* WatchGamesFrontEnd Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchGamesFrontEnd Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C44E0712C123C6800034C10 /* WatchGamesFrontEndApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchGamesFrontEndApp.swift; sourceTree = "<group>"; };
+		5C44E0732C123C6800034C10 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5C44E0752C123C6A00034C10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C44E0782C123C6A00034C10 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5C44E07E2C123C6A00034C10 /* WatchGamesFrontEnd Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WatchGamesFrontEnd Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C44E0822C123C6A00034C10 /* WatchGamesFrontEnd_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchGamesFrontEnd_Watch_AppTests.swift; sourceTree = "<group>"; };
+		5C44E0882C123C6A00034C10 /* WatchGamesFrontEnd Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WatchGamesFrontEnd Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C44E08C2C123C6A00034C10 /* WatchGamesFrontEnd_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchGamesFrontEnd_Watch_AppUITests.swift; sourceTree = "<group>"; };
+		5C44E08E2C123C6A00034C10 /* WatchGamesFrontEnd_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchGamesFrontEnd_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5C44E0432C123C6500034C10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C44E0532C123C6800034C10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C44E05D2C123C6800034C10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C44E0692C123C6800034C10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C44E07B2C123C6A00034C10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C44E0852C123C6A00034C10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5C44E03D2C123C6500034C10 = {
+			isa = PBXGroup;
+			children = (
+				5C44E0482C123C6500034C10 /* WatchGamesFrontEnd */,
+				5C44E0592C123C6800034C10 /* WatchGamesFrontEndTests */,
+				5C44E0632C123C6800034C10 /* WatchGamesFrontEndUITests */,
+				5C44E0702C123C6800034C10 /* WatchGamesFrontEnd Watch App */,
+				5C44E0812C123C6A00034C10 /* WatchGamesFrontEnd Watch AppTests */,
+				5C44E08B2C123C6A00034C10 /* WatchGamesFrontEnd Watch AppUITests */,
+				5C44E0472C123C6500034C10 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5C44E0472C123C6500034C10 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C44E0462C123C6500034C10 /* WatchGamesFrontEnd.app */,
+				5C44E0562C123C6800034C10 /* WatchGamesFrontEndTests.xctest */,
+				5C44E0602C123C6800034C10 /* WatchGamesFrontEndUITests.xctest */,
+				5C44E06C2C123C6800034C10 /* WatchGamesFrontEnd Watch App.app */,
+				5C44E07E2C123C6A00034C10 /* WatchGamesFrontEnd Watch AppTests.xctest */,
+				5C44E0882C123C6A00034C10 /* WatchGamesFrontEnd Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5C44E0482C123C6500034C10 /* WatchGamesFrontEnd */ = {
+			isa = PBXGroup;
+			children = (
+				5C44E0492C123C6500034C10 /* WatchGamesFrontEndApp.swift */,
+				5C44E04B2C123C6500034C10 /* ContentView.swift */,
+				5C44E04D2C123C6800034C10 /* Assets.xcassets */,
+				5C44E04F2C123C6800034C10 /* Preview Content */,
+			);
+			path = WatchGamesFrontEnd;
+			sourceTree = "<group>";
+		};
+		5C44E04F2C123C6800034C10 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5C44E0502C123C6800034C10 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5C44E0592C123C6800034C10 /* WatchGamesFrontEndTests */ = {
+			isa = PBXGroup;
+			children = (
+				5C44E05A2C123C6800034C10 /* WatchGamesFrontEndTests.swift */,
+			);
+			path = WatchGamesFrontEndTests;
+			sourceTree = "<group>";
+		};
+		5C44E0632C123C6800034C10 /* WatchGamesFrontEndUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5C44E0642C123C6800034C10 /* WatchGamesFrontEndUITests.swift */,
+				5C44E0662C123C6800034C10 /* WatchGamesFrontEndUITestsLaunchTests.swift */,
+			);
+			path = WatchGamesFrontEndUITests;
+			sourceTree = "<group>";
+		};
+		5C44E0702C123C6800034C10 /* WatchGamesFrontEnd Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				5C44E0712C123C6800034C10 /* WatchGamesFrontEndApp.swift */,
+				5C44E0732C123C6800034C10 /* ContentView.swift */,
+				5C44E0752C123C6A00034C10 /* Assets.xcassets */,
+				5C44E0772C123C6A00034C10 /* Preview Content */,
+			);
+			path = "WatchGamesFrontEnd Watch App";
+			sourceTree = "<group>";
+		};
+		5C44E0772C123C6A00034C10 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5C44E0782C123C6A00034C10 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5C44E0812C123C6A00034C10 /* WatchGamesFrontEnd Watch AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				5C44E0822C123C6A00034C10 /* WatchGamesFrontEnd_Watch_AppTests.swift */,
+			);
+			path = "WatchGamesFrontEnd Watch AppTests";
+			sourceTree = "<group>";
+		};
+		5C44E08B2C123C6A00034C10 /* WatchGamesFrontEnd Watch AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5C44E08C2C123C6A00034C10 /* WatchGamesFrontEnd_Watch_AppUITests.swift */,
+				5C44E08E2C123C6A00034C10 /* WatchGamesFrontEnd_Watch_AppUITestsLaunchTests.swift */,
+			);
+			path = "WatchGamesFrontEnd Watch AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5C44E0452C123C6500034C10 /* WatchGamesFrontEnd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C44E0962C123C6A00034C10 /* Build configuration list for PBXNativeTarget "WatchGamesFrontEnd" */;
+			buildPhases = (
+				5C44E0422C123C6500034C10 /* Sources */,
+				5C44E0432C123C6500034C10 /* Frameworks */,
+				5C44E0442C123C6500034C10 /* Resources */,
+				5C44E0952C123C6A00034C10 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C44E06F2C123C6800034C10 /* PBXTargetDependency */,
+			);
+			name = WatchGamesFrontEnd;
+			productName = WatchGamesFrontEnd;
+			productReference = 5C44E0462C123C6500034C10 /* WatchGamesFrontEnd.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5C44E0552C123C6800034C10 /* WatchGamesFrontEndTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C44E0992C123C6A00034C10 /* Build configuration list for PBXNativeTarget "WatchGamesFrontEndTests" */;
+			buildPhases = (
+				5C44E0522C123C6800034C10 /* Sources */,
+				5C44E0532C123C6800034C10 /* Frameworks */,
+				5C44E0542C123C6800034C10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C44E0582C123C6800034C10 /* PBXTargetDependency */,
+			);
+			name = WatchGamesFrontEndTests;
+			productName = WatchGamesFrontEndTests;
+			productReference = 5C44E0562C123C6800034C10 /* WatchGamesFrontEndTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5C44E05F2C123C6800034C10 /* WatchGamesFrontEndUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C44E09C2C123C6A00034C10 /* Build configuration list for PBXNativeTarget "WatchGamesFrontEndUITests" */;
+			buildPhases = (
+				5C44E05C2C123C6800034C10 /* Sources */,
+				5C44E05D2C123C6800034C10 /* Frameworks */,
+				5C44E05E2C123C6800034C10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C44E0622C123C6800034C10 /* PBXTargetDependency */,
+			);
+			name = WatchGamesFrontEndUITests;
+			productName = WatchGamesFrontEndUITests;
+			productReference = 5C44E0602C123C6800034C10 /* WatchGamesFrontEndUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		5C44E06B2C123C6800034C10 /* WatchGamesFrontEnd Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C44E0922C123C6A00034C10 /* Build configuration list for PBXNativeTarget "WatchGamesFrontEnd Watch App" */;
+			buildPhases = (
+				5C44E0682C123C6800034C10 /* Sources */,
+				5C44E0692C123C6800034C10 /* Frameworks */,
+				5C44E06A2C123C6800034C10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WatchGamesFrontEnd Watch App";
+			productName = "WatchGamesFrontEnd Watch App";
+			productReference = 5C44E06C2C123C6800034C10 /* WatchGamesFrontEnd Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5C44E07D2C123C6A00034C10 /* WatchGamesFrontEnd Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C44E09F2C123C6A00034C10 /* Build configuration list for PBXNativeTarget "WatchGamesFrontEnd Watch AppTests" */;
+			buildPhases = (
+				5C44E07A2C123C6A00034C10 /* Sources */,
+				5C44E07B2C123C6A00034C10 /* Frameworks */,
+				5C44E07C2C123C6A00034C10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C44E0802C123C6A00034C10 /* PBXTargetDependency */,
+			);
+			name = "WatchGamesFrontEnd Watch AppTests";
+			productName = "WatchGamesFrontEnd Watch AppTests";
+			productReference = 5C44E07E2C123C6A00034C10 /* WatchGamesFrontEnd Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5C44E0872C123C6A00034C10 /* WatchGamesFrontEnd Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C44E0A22C123C6A00034C10 /* Build configuration list for PBXNativeTarget "WatchGamesFrontEnd Watch AppUITests" */;
+			buildPhases = (
+				5C44E0842C123C6A00034C10 /* Sources */,
+				5C44E0852C123C6A00034C10 /* Frameworks */,
+				5C44E0862C123C6A00034C10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C44E08A2C123C6A00034C10 /* PBXTargetDependency */,
+			);
+			name = "WatchGamesFrontEnd Watch AppUITests";
+			productName = "WatchGamesFrontEnd Watch AppUITests";
+			productReference = 5C44E0882C123C6A00034C10 /* WatchGamesFrontEnd Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C44E03E2C123C6500034C10 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					5C44E0452C123C6500034C10 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					5C44E0552C123C6800034C10 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 5C44E0452C123C6500034C10;
+					};
+					5C44E05F2C123C6800034C10 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 5C44E0452C123C6500034C10;
+					};
+					5C44E06B2C123C6800034C10 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					5C44E07D2C123C6A00034C10 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 5C44E06B2C123C6800034C10;
+					};
+					5C44E0872C123C6A00034C10 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 5C44E06B2C123C6800034C10;
+					};
+				};
+			};
+			buildConfigurationList = 5C44E0412C123C6500034C10 /* Build configuration list for PBXProject "WatchGamesFrontEnd" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5C44E03D2C123C6500034C10;
+			productRefGroup = 5C44E0472C123C6500034C10 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5C44E0452C123C6500034C10 /* WatchGamesFrontEnd */,
+				5C44E0552C123C6800034C10 /* WatchGamesFrontEndTests */,
+				5C44E05F2C123C6800034C10 /* WatchGamesFrontEndUITests */,
+				5C44E06B2C123C6800034C10 /* WatchGamesFrontEnd Watch App */,
+				5C44E07D2C123C6A00034C10 /* WatchGamesFrontEnd Watch AppTests */,
+				5C44E0872C123C6A00034C10 /* WatchGamesFrontEnd Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5C44E0442C123C6500034C10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C44E0512C123C6800034C10 /* Preview Assets.xcassets in Resources */,
+				5C44E04E2C123C6800034C10 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C44E0542C123C6800034C10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C44E05E2C123C6800034C10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C44E06A2C123C6800034C10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C44E0792C123C6A00034C10 /* Preview Assets.xcassets in Resources */,
+				5C44E0762C123C6A00034C10 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C44E07C2C123C6A00034C10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C44E0862C123C6A00034C10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5C44E0422C123C6500034C10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C44E04C2C123C6500034C10 /* ContentView.swift in Sources */,
+				5C44E04A2C123C6500034C10 /* WatchGamesFrontEndApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C44E0522C123C6800034C10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C44E05B2C123C6800034C10 /* WatchGamesFrontEndTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C44E05C2C123C6800034C10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C44E0672C123C6800034C10 /* WatchGamesFrontEndUITestsLaunchTests.swift in Sources */,
+				5C44E0652C123C6800034C10 /* WatchGamesFrontEndUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C44E0682C123C6800034C10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C44E0742C123C6800034C10 /* ContentView.swift in Sources */,
+				5C44E0722C123C6800034C10 /* WatchGamesFrontEndApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C44E07A2C123C6A00034C10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C44E0832C123C6A00034C10 /* WatchGamesFrontEnd_Watch_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C44E0842C123C6A00034C10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C44E08F2C123C6A00034C10 /* WatchGamesFrontEnd_Watch_AppUITestsLaunchTests.swift in Sources */,
+				5C44E08D2C123C6A00034C10 /* WatchGamesFrontEnd_Watch_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5C44E0582C123C6800034C10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C44E0452C123C6500034C10 /* WatchGamesFrontEnd */;
+			targetProxy = 5C44E0572C123C6800034C10 /* PBXContainerItemProxy */;
+		};
+		5C44E0622C123C6800034C10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C44E0452C123C6500034C10 /* WatchGamesFrontEnd */;
+			targetProxy = 5C44E0612C123C6800034C10 /* PBXContainerItemProxy */;
+		};
+		5C44E06F2C123C6800034C10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C44E06B2C123C6800034C10 /* WatchGamesFrontEnd Watch App */;
+			targetProxy = 5C44E06E2C123C6800034C10 /* PBXContainerItemProxy */;
+		};
+		5C44E0802C123C6A00034C10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C44E06B2C123C6800034C10 /* WatchGamesFrontEnd Watch App */;
+			targetProxy = 5C44E07F2C123C6A00034C10 /* PBXContainerItemProxy */;
+		};
+		5C44E08A2C123C6A00034C10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C44E06B2C123C6800034C10 /* WatchGamesFrontEnd Watch App */;
+			targetProxy = 5C44E0892C123C6A00034C10 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5C44E0902C123C6A00034C10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5C44E0912C123C6A00034C10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		5C44E0932C123C6A00034C10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchGamesFrontEnd Watch App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchGamesFrontEnd;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.calhargis.WatchGamesFrontEnd;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.calhargis.WatchGamesFrontEnd.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		5C44E0942C123C6A00034C10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchGamesFrontEnd Watch App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchGamesFrontEnd;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.calhargis.WatchGamesFrontEnd;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.calhargis.WatchGamesFrontEnd.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		5C44E0972C123C6A00034C10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchGamesFrontEnd/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchGamesFrontEnd;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.calhargis.WatchGamesFrontEnd;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5C44E0982C123C6A00034C10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchGamesFrontEnd/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchGamesFrontEnd;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.calhargis.WatchGamesFrontEnd;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C44E09A2C123C6A00034C10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.calhargis.WatchGamesFrontEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WatchGamesFrontEnd.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WatchGamesFrontEnd";
+			};
+			name = Debug;
+		};
+		5C44E09B2C123C6A00034C10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.calhargis.WatchGamesFrontEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WatchGamesFrontEnd.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WatchGamesFrontEnd";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C44E09D2C123C6A00034C10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.calhargis.WatchGamesFrontEndUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WatchGamesFrontEnd;
+			};
+			name = Debug;
+		};
+		5C44E09E2C123C6A00034C10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.calhargis.WatchGamesFrontEndUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WatchGamesFrontEnd;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C44E0A02C123C6A00034C10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.calhargis.WatchGamesFrontEnd-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WatchGamesFrontEnd Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WatchGamesFrontEnd Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		5C44E0A12C123C6A00034C10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.calhargis.WatchGamesFrontEnd-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WatchGamesFrontEnd Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WatchGamesFrontEnd Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		5C44E0A32C123C6A00034C10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.calhargis.WatchGamesFrontEnd-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "WatchGamesFrontEnd Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		5C44E0A42C123C6A00034C10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.calhargis.WatchGamesFrontEnd-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "WatchGamesFrontEnd Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5C44E0412C123C6500034C10 /* Build configuration list for PBXProject "WatchGamesFrontEnd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C44E0902C123C6A00034C10 /* Debug */,
+				5C44E0912C123C6A00034C10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C44E0922C123C6A00034C10 /* Build configuration list for PBXNativeTarget "WatchGamesFrontEnd Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C44E0932C123C6A00034C10 /* Debug */,
+				5C44E0942C123C6A00034C10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C44E0962C123C6A00034C10 /* Build configuration list for PBXNativeTarget "WatchGamesFrontEnd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C44E0972C123C6A00034C10 /* Debug */,
+				5C44E0982C123C6A00034C10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C44E0992C123C6A00034C10 /* Build configuration list for PBXNativeTarget "WatchGamesFrontEndTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C44E09A2C123C6A00034C10 /* Debug */,
+				5C44E09B2C123C6A00034C10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C44E09C2C123C6A00034C10 /* Build configuration list for PBXNativeTarget "WatchGamesFrontEndUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C44E09D2C123C6A00034C10 /* Debug */,
+				5C44E09E2C123C6A00034C10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C44E09F2C123C6A00034C10 /* Build configuration list for PBXNativeTarget "WatchGamesFrontEnd Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C44E0A02C123C6A00034C10 /* Debug */,
+				5C44E0A12C123C6A00034C10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C44E0A22C123C6A00034C10 /* Build configuration list for PBXNativeTarget "WatchGamesFrontEnd Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C44E0A32C123C6A00034C10 /* Debug */,
+				5C44E0A42C123C6A00034C10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5C44E03E2C123C6500034C10 /* Project object */;
+}
