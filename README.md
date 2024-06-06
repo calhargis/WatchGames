@@ -44,7 +44,7 @@ We plan to expand our game library, adding more fun and interactive games over t
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/WatchGames.git
+   git clone https://github.com/calhargis/WatchGames.git
    cd WatchGames
 
 2. **Deploy AWS Lambda Functions:**
