@@ -1,2 +1,4 @@
-package model.response;public class DeleteGameResponse {
+package model.response;
+
+public class DeleteGameResponse {
 }
