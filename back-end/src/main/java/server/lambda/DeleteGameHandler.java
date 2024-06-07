@@ -31,7 +31,7 @@ public class DeleteGameHandler implements RequestHandler<DeleteGameRequest, Dele
 
         try {
             table.deleteItem("gameId", gameId);
-            return createErrorResponse("Game deleted successfully");
+            return createSuccessResponse("Game deleted successfully");
         } catch (Exception e) {
             e.printStackTrace();
             return createErrorResponse("\"Error deleting game: \" + e.getMessage()");
@@ -41,6 +41,13 @@ public class DeleteGameHandler implements RequestHandler<DeleteGameRequest, Dele
     public DeleteGameResponse createErrorResponse(String message) {
         DeleteGameResponse response = new DeleteGameResponse();
         response.setStatus("Error");
+        response.setMessage(message);
+        return response;
+    }
+
+    public DeleteGameResponse createSuccessResponse(String message) {
+        DeleteGameResponse response = new DeleteGameResponse();
+        response.setStatus("Success");
         response.setMessage(message);
         return response;
     }
