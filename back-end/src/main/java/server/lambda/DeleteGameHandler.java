@@ -7,31 +7,41 @@ import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.dynamodbv2.model.DeleteItemRequest;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import model.request.DeleteGameRequest;
+import model.response.DeleteGameResponse;
+import model.response.MakeMoveResponse;
 
 import java.util.Map;
 
-public class DeleteGameHandler implements RequestHandler<Map<String, Object>, String> {
+public class DeleteGameHandler implements RequestHandler<DeleteGameRequest, DeleteGameResponse> {
 
     private final AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().build();
     private final DynamoDB dynamoDB = new DynamoDB(client);
     private final String TABLE_NAME = "TicTacToeGames";
 
     @Override
-    public String handleRequest(Map<String, Object> input, Context context) {
-        String gameId = (String) input.get("gameId");
+    public DeleteGameResponse handleRequest(DeleteGameRequest request, Context context) {
+        String gameId = request.getGameId();
 
         if (gameId == null || gameId.isEmpty()) {
-            return "Game ID is missing";
+            return createErrorResponse("Game ID is missing");
         }
 
         Table table = dynamoDB.getTable(TABLE_NAME);
 
         try {
             table.deleteItem("gameId", gameId);
-            return "Game deleted successfully";
+            return createErrorResponse("Game deleted successfully");
         } catch (Exception e) {
             e.printStackTrace();
-            return "Error deleting game: " + e.getMessage();
+            return createErrorResponse("\"Error deleting game: \" + e.getMessage()");
         }
+    }
+
+    public DeleteGameResponse createErrorResponse(String message) {
+        DeleteGameResponse response = new DeleteGameResponse();
+        response.setStatus("Error");
+        response.setMessage(message);
+        return response;
     }
 }
