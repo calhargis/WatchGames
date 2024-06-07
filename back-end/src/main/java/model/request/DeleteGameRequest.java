@@ -2,6 +2,9 @@ package model.request;
 
 public class DeleteGameRequest {
 
+    public DeleteGameRequest() {
+    }
+
     public DeleteGameRequest(String gameId) {
         this.gameId = gameId;
     }

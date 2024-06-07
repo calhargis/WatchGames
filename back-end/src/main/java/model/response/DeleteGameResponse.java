@@ -2,6 +2,9 @@ package model.response;
 
 public class DeleteGameResponse {
 
+    public DeleteGameResponse() {
+    }
+
     String status;
 
     String message;
